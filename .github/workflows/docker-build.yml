@@ -12,8 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v3
+      - name: Show system info
+        run: |
+          uname -a
+          lsb_release -a || cat /etc/os-release
+          hostnamect
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image with buildx (no push)
         uses: docker/build-push-action@v5
