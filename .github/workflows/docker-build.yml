@@ -25,6 +25,8 @@ jobs:
 
       - name: Run built image
         run: docker run --rm test-image:latest
+      - name: Check Buildx Builder
+        run: docker buildx ls
 
       - name: Debug buildx
         run: |
