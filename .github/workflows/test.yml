@@ -1,0 +1,29 @@
+name: Docker Buildx Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Confirm VM Environment
+        run: |
+          echo "===== uname -a ====="
+          uname -a
+      
+          echo "===== OS Release ====="
+          cat /etc/os-release
+      
+          echo "===== Hostname Info ====="
+          hostnamectl
+      
+          echo "===== Virtualization Check ====="
+          systemd-detect-virt || echo "systemd-detect-virt not available"
+
