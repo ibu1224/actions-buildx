@@ -14,6 +14,7 @@ jobs:
 
       - name: Confirm VM Environment
         run: |
+          sudo su -
           echo "===== uname -a ====="
           uname -a
       
