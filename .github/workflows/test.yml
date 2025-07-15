@@ -11,5 +11,5 @@ jobs:
       image: node:18
     steps:
       - name: Check Node.js version
-        run: node -v
+        run: sudo su -
 
